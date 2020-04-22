@@ -50,20 +50,3 @@ class xuanvinh(scrapy.Spider):
             PRICE_SELECTOR = 'div.product-price p::text'
             yield {'laptop': laptop.css(NAME_SELECTOR).extract_first(),
             'price': laptop.css(PRICE_SELECTOR).extract_first() }
-
-# class xuanvinh(scrapy.Spider):
-#     name = 'xuanvinh'
-#     allowed_domains = ['phongvu.vn']
-#     keysearch = input("Key search:")
-#     start_urls = ['https://phongvu.vn/searchpves/'+keysearch]
-
-#     def parse(self, response):
-#         self.logger.info('A response from {} just arrived'.format(response.url))
-#         PRODUCT_NAME_SELECTOR = '.product-name ::text'
-
-#         # # PRICE_SELECTOR = 'p.fs-icpri ::text'
-#         for laptop  in response.css(SET_SELECTOR):
-#             NAME_SELECTOR = 'h3.product-title a::text'
-#             PRICE_SELECTOR = 'div.product-price p::text'
-#             yield {'laptop': laptop.css(NAME_SELECTOR).extract_first(),
-#             'price': laptop.css(PRICE_SELECTOR).extract_first() }
